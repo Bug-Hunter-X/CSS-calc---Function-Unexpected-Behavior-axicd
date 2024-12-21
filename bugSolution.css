@@ -1,0 +1,24 @@
+/* bugSolution.css */
+/* Avoid inconsistent units within a single calc() expression.  Use consistent units (px, %, em, etc.) to ensure predictable results.*/
+.container {
+  width: calc(100% - 20px);
+}
+
+/* Avoid overly complex nested calc() expressions. Simplify calculations to enhance readability and debugging ease.*/
+.element {
+  width: 200px;
+  height: calc(50% - 10px);
+}
+
+/* Using variables can enhance code readability and maintainability for complex calculations*/
+:root{
+  --container-width: 80%;
+  --element-margin: 10px;
+}
+.container2 {
+  width: var(--container-width);
+  padding: var(--element-margin);
+}
+.element2 {
+  width: calc(var(--container-width) - (var(--element-margin)*2));
+}
